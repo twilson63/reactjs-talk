@@ -65,24 +65,23 @@ controls: true
 
 ### es5
 
-``` js
-var MyComponent = React.createClass({
-  render: function() {
-    return React.createElement('h1', null, 'HelloWorld')
-  }
-});
-```
+
+    var MyComponent = React.createClass({
+      render: function() {
+        return React.createElement('h1', null, 'HelloWorld')
+      }
+    });
+
 --
 
 ### es6
 
-``` js
-class MyComponent extends React.Component {
-  render() {
-    return React.createElement('h1', null, 'HelloWorld')
-  }
-}
-```
+    class MyComponent extends React.Component {
+      render() {
+        return React.createElement('h1', null, 'HelloWorld')
+      }
+    }
+
 
 --
 
@@ -95,13 +94,13 @@ JSX -- an XML-like syntax for constructing markup within React components.
 
 --
 
-``` js
-React.createElement('h1', { className: 'title'}, 'Hello World')
-```
+## JSX
 
-``` html
-<h1 className="title">Hello World</h1>
-```
+    React.createElement('h1', { className: 'title'}, 'Hello World')
+
+
+    <h1 className="title">Hello World</h1>
+
 
 --
 
@@ -121,24 +120,24 @@ React.createElement('h1', { className: 'title'}, 'Hello World')
 
 --
 
-``` js
-render: function() {
-  return React.createElement('h1', { className: 'divider'}, 
-    "Label Text",
-    React.createElement('hr')
-  );
-}
-```
+## no JSX
+
+    render: function() {
+      return React.createElement('h1', { className: 'divider'}, 
+        "Label Text",
+        React.createElement('hr')
+      );
+    }
 
 --
 
-``` jsx
-render: function() {
-  return <div className="divider">
-    Label Text<hr />
-  </div>;
-}
-```
+## JSX
+
+    render: function() {
+      return <div className="divider">
+        Label Text<hr />
+      </div>;
+    }
 
 --
 
@@ -146,11 +145,15 @@ render: function() {
 
 --
 
-## Abstration
+## Abstraction
+
+Any dsl changes to React does not affect `JSX`
 
 --
 
 ## Separation of concerns
+
+Seeing both the markup and code clearly separates concerns in the file.
 
 --
 
@@ -158,16 +161,311 @@ render: function() {
 
 * Open Console
 
-```
-npm i reactjs-adventure -g
-mkdir <your name>
-git clone git@github.com:twilson63/reactjs-helloworld.git
-cd reactjs-helloworld
-npm install
-reactjs-adventure
-```
+    npm i reactjs-adventure -g
+    mkdir <your name>
+    git clone git@github.com:twilson63/reactjs-helloworld.git
+    cd reactjs-helloworld
+    npm install
+    reactjs-adventure
+
 --
 
 # Composite components
 
 --
+
+## Defining a custom component
+
+    <div className="divider">
+      <h2>FooBar</h2>
+    </div>
+
+--
+
+## Defining a custom component
+
+    var Divider = React.createClass({
+      render: function() {
+        return (
+          <div className="divider">
+            <h2>FooBar</h2>
+          </div>
+        );
+      }
+    });
+
+--
+
+## Dynamic values
+
+    var Divider = React.createClass({
+      render: function() {
+        var text = 'FooBar';
+        return (
+          <div className="divider">
+            <h2>{text}</h2><hr />
+          </div>
+        );
+      }
+    });
+
+## 
+
+## Composing the custom component
+
+<a class="jsbin-embed" href="http://jsbin.com/movufi/1/embed?html,output">Hello React</a><script src="http://static.jsbin.com/js/embed.js"></script>
+
+--
+
+# JSX vs HTML
+
+--
+
+### Attributes
+
+    <div id="some-id" className="some-class-name"></div>
+
+dynamic
+
+    var recordId = this.props.id;
+    var classes = 'some-class-name';
+    ...
+    <div id={recordId}  className={classes}>...</div>
+
+--
+
+### Conditionals
+
+    <div className={ 
+      this.state.isComplete ? 'isComplete' : '' 
+    }>...</div>
+
+* use ternary logic
+* set a variable 
+* offload to a function
+* use the && 
+
+    <div className={
+      this.state.isComplete && 'isComplete'
+    }>...</div>
+
+--
+
+### Non-DOM Attributes
+
+* key
+* ref
+* dangerouslySetInnerHTML
+
+--
+
+### ref
+    
+    <div>
+      <input ref="myInput" ... />
+    </div>
+
+
+    this.ref.myInput // Inside your component
+
+--
+
+### Events
+
+    ...
+    handleClick: function(event) { ... },
+    render: function() {
+      return <div onClick={this.handleClick.bind(this)}>...</div>
+    }
+
+--
+
+### Comments
+
+    <div>
+      {/* 
+        a comment
+      */}
+    </div>
+
+    <input 
+      /*
+        comment
+      */
+      />
+
+    <input
+      name="email" // inline comment
+      />
+
+--
+
+### Special attributes
+
+    <label htmlFor="for-text" ...>
+
+    <div className={classes} ...>
+
+--
+
+### Styles
+
+    var styles = {
+      borderColor: '#999',
+      borderThickness: '1px'
+    };
+    React.render(<div style={styles}>...</div>, node);
+
+--
+
+### Without JSX
+
+    var DividerClass = React.createClass({ displayName: 'Divider',
+      render: function() {
+        return {
+          React.createElement('div', {className: 'divider'}, 
+            React.createElement('h2', null, this.props.children),
+            React.createElement('hr', null)
+          )
+        }
+      }
+    })  
+
+--
+
+# Component Lifecycle
+
+--
+
+### Instanciation
+
+* getDefaultProps
+* getInitialState
+* componentWillMount
+* render
+* componentDidMount
+
+--
+
+### All subsquent uses
+
+* getInitialState
+* componentWillMount
+* render
+* componentDidMount
+
+--
+
+### Lifetime
+
+* componentWillRecieveProps
+* shouldComponentUpdate
+* componentWillUpdate
+* render
+* componentDidUpdate
+
+--
+
+### Teardown
+
+* componentWillUnmount
+
+--
+
+### getDefaultProps
+
+called only once, sets default values when not specified by parent
+
+--
+
+### getInitialState
+
+called only once, chance to customize internal state
+
+--
+
+### componentWillMount
+
+before the initial render, last chance to change the state 
+before a render method is called.
+
+--
+
+### render
+
+Builds the virtual DOM - should be a `PURE` function
+
+can return null, false or React component
+
+--
+
+### componentDidMount
+
+Can access actual node via `this.getDOMNode()`
+
+This is the lifecycle hook for accessing non-react components
+
+    var datasources = [...];
+    var MyComponent = React.createClass({
+      render: function() {
+        return <input />
+      },
+      componentDidMount: function() {
+        $(this.getDOMNode()).autocomplete({
+          sources: datasources
+        })
+      }
+    });
+
+--
+
+### componentWillReceiveProps
+
+Props can change at any moment, this method gives
+the component the opportunity to update the state
+from the changed props.
+
+    componentWillReceiveProps: function(nextProps) {
+      if(nextProps.checked !== undefined) {
+        this.setState({
+            checked: nextProps.checked
+          });
+      }
+    }
+
+--
+
+### shouldComponentUpdate
+
+If you don't need to re-render the component return false.
+
+** Be careful not to pre-optimize
+
+--
+
+### componentWillUpdate
+
+Called when props change, but can't update date in this method.
+
+--
+
+### componentDidUpdate
+
+similar to componentDidMount
+
+--
+
+### componentWillUnmount
+
+this is where you can do any cleanup
+
+--
+
+### Anti-Pattern
+
+calculated values as state
+
+calcualate values at render time.
+
+--
+

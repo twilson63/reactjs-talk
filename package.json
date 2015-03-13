@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "cleaver readme.md",
+    "start": "w3",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Tom",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cleaver": "^0.7.3",
+    "w3": "^0.6.0"
+  }
 }
