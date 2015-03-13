@@ -469,3 +469,78 @@ calcualate values at render time.
 
 --
 
+# Data Flow
+
+--
+
+# Parent -> Child
+
+--
+
+## Props
+
+Short for Properties
+
+--
+
+## PropTypes
+
+var TableRow = React.createClass({
+  propTypes: {
+    survey: React.PropTypes.shape({
+      id: React.PropTypes.number.isRequired
+    }).isRequired,
+    onClick: React.PropTypes.func
+  }
+});
+
+--
+
+## getDefaultProps
+
+called as soon as React.createClass is called
+
+--
+
+## State
+
+Internal state of your component
+
+* setState - never update state directly
+
+--
+
+* Try to use state for simple data
+* Always consider props as the truth
+
+--
+
+# Event Handling
+
+    <button className="btn btn-save" 
+      onClick={this.handleSaveClicked}>
+      Save
+    </button>
+
+--
+
+# Composition
+
+--
+
+# Mixins
+
+--
+
+# DOM Manipulation
+
+--
+
+# Forms
+
+--
+
+# Animations
+
+--
+

@@ -827,9 +827,82 @@ from the changed props.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-56">
-    <section class="slide-content"></section>
+    <section class="slide-content"><h1 id="data-flow">Data Flow</h1>
+</section>
   </div>
   <div class="slide hidden" id="slide-57">
+    <section class="slide-content"><h1 id="parent-child">Parent -&gt; Child</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-58">
+    <section class="slide-content"><h2 id="props">Props</h2>
+<p>Short for Properties</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-59">
+    <section class="slide-content"><h2 id="proptypes">PropTypes</h2>
+<p>var TableRow = React.createClass({
+  propTypes: {
+    survey: React.PropTypes.shape({
+      id: React.PropTypes.number.isRequired
+    }).isRequired,
+    onClick: React.PropTypes.func
+  }
+});</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-60">
+    <section class="slide-content"><h2 id="getdefaultprops">getDefaultProps</h2>
+<p>called as soon as React.createClass is called</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-61">
+    <section class="slide-content"><h2 id="state">State</h2>
+<p>Internal state of your component</p>
+<ul>
+<li>setState - never update state directly</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-62">
+    <section class="slide-content"><ul>
+<li>Try to use state for simple data</li>
+<li>Always consider props as the truth</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-63">
+    <section class="slide-content"><h1 id="event-handling">Event Handling</h1>
+<pre><code>&lt;button className=&quot;btn btn-save&quot; 
+  onClick={this.handleSaveClicked}&gt;
+  Save
+&lt;/button&gt;</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-64">
+    <section class="slide-content"><h1 id="composition">Composition</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-65">
+    <section class="slide-content"><h1 id="mixins">Mixins</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-66">
+    <section class="slide-content"><h1 id="dom-manipulation">DOM Manipulation</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-67">
+    <section class="slide-content"><h1 id="forms">Forms</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-68">
+    <section class="slide-content"><h1 id="animations">Animations</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-69">
+    <section class="slide-content"></section>
+  </div>
+  <div class="slide hidden" id="slide-70">
     <section class="slide-content"><div class="author">
   <h1 class="name">Tom Wilson</h1>
     <h3 class="twitter">
