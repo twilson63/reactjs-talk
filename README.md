@@ -209,7 +209,7 @@ Seeing both the markup and code clearly separates concerns in the file.
       }
     });
 
-## 
+--
 
 ## Composing the custom component
 
@@ -243,6 +243,11 @@ dynamic
 * use ternary logic
 * set a variable 
 * offload to a function
+
+--
+
+### Conditionals (cont)
+
 * use the && 
 
     <div className={
@@ -532,6 +537,21 @@ Internal state of your component
 
 --
 
+### What are Mixins?
+
+Objects mixed in to our Components:
+
+    React.createClass({
+      mixins: [{
+        getInitialState: function() { return {a: 1}}
+      }],
+      getInitialState: function() { return { b: 2}}
+    });
+
+Result: {a: 1, b: 2}
+
+--
+
 # DOM Manipulation
 
 --
@@ -540,7 +560,160 @@ Internal state of your component
 
 --
 
+### Controlled Forms
+
+<iframe width="100%" height="300" src="//jsfiddle.net/1a8xr2z6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+--
+
+### Events
+
+    handleEvent: function(event) {
+      var DOMNode = event.target;
+      var newValue = DOMNode.value;
+    }
+
+--
+
+### TextArea
+
+    <textarea
+      value={this.state.mytext}
+      onChange={this.handleEvent} />
+
+--
+
+### Select
+
+    <select value="{this.state.selectValue" onChange={this.handleChange}>
+      <option value="A">A</option>
+      <option value="B">B</option>
+    </select>
+
+--
+
+### Select Multi
+
+<iframe width="100%" height="300" src="//jsfiddle.net/yddy2ep0/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+--
+
+### CheckBox and Radio
+
+<iframe width="100%" height="300" src="//jsfiddle.net/es83ydmn/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+--
+
+### Multiple Form Handlers
+
+<iframe width="100%" height="300" src="//jsfiddle.net/wyzvLhkb/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+--
+
 # Animations
 
 --
+
+### ReactCSSTransitionGroup
+
+    var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
+    var TodoList = React.createClass({
+      getInitialState: function() {
+        return {items: ['hello', 'world', 'click', 'me']};
+      },
+      handleAdd: function() {
+        var newItems =
+          this.state.items.concat([prompt('Enter some text')]);
+        this.setState({items: newItems});
+      },
+      handleRemove: function(i) {
+        var newItems = this.state.items;
+        newItems.splice(i, 1);
+        this.setState({items: newItems});
+      },
+      render: function() {
+        var items = this.state.items.map(function(item, i) {
+          return (
+            <div key={item} onClick={this.handleRemove.bind(this, i)}>
+              {item}
+            </div>
+          );
+        }.bind(this));
+        return (
+          <div>
+            <button onClick={this.handleAdd}>Add Item</button>
+            <ReactCSSTransitionGroup transitionName="example">
+              {items}
+            </ReactCSSTransitionGroup>
+          </div>
+        );
+      }
+    });
+
+--
+
+### ReactCSSTransitionGroup Links
+
+
+https://github.com/twilson63/bleeding-edge-sample-app.git
+
+http://facebook.github.io/react/docs/animation.html
+
+--
+
+# React Router
+
+--
+
+### Router Example
+
+    var routes = (
+      <Route handler={App} path="/">
+        <DefaultRoute handler={Home} />
+        <Route name="about" handler={About} />
+        <Route name="users" handler={Users}>
+          <Route name="recent-users" path="recent" handler={RecentUsers} />
+          <Route name="user" path="/user/:userId" handler={User} />
+          <NotFoundRoute handler={UserRouteNotFound}/>
+        </Route>
+        <NotFoundRoute handler={NotFound}/>
+        <Redirect from="company" to="about" />
+      </Route>
+    );
+
+    Router.run(routes, function (Handler) {
+      React.render(<Handler/>, document.body);
+    });
+
+    // Or, if you'd like to use the HTML5 history API for cleaner URLs:
+
+    Router.run(routes, Router.HistoryLocation, function (Handler) {
+      React.render(<Handler/>, document.body);
+    });
+
+--
+
+### Router Overview Guide
+
+https://github.com/rackt/react-router/blob/master/docs/guides/overview.md
+
+--
+
+### Cool Tricks (Hype!)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z5e7kWSHWTg" frameborder="0" allowfullscreen></iframe>
+
+--
+
+### ReactConf Videos
+
+http://conf.reactjs.com/schedule.html
+
+--
+
+### Lets Build an App
+
+    npm i reactjs-adventure
+    git clone https://github.com/twilson63/reactjs-example.git
 

@@ -591,16 +591,18 @@ markup, and the code that generates it, are inherently tied together.</p>
     );
   }
 });</code></pre>
-<h2 id="-"> </h2>
-<h2 id="composing-the-custom-component">Composing the custom component</h2>
-<p><a class="jsbin-embed" href="http://jsbin.com/movufi/1/embed?html,output">Hello React</a><script src="http://static.jsbin.com/js/embed.js"></script></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-30">
-    <section class="slide-content"><h1 id="jsx-vs-html">JSX vs HTML</h1>
+    <section class="slide-content"><h2 id="composing-the-custom-component">Composing the custom component</h2>
+<p><a class="jsbin-embed" href="http://jsbin.com/movufi/1/embed?html,output">Hello React</a><script src="http://static.jsbin.com/js/embed.js"></script></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><h1 id="jsx-vs-html">JSX vs HTML</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
     <section class="slide-content"><h3 id="attributes">Attributes</h3>
 <pre><code>&lt;div id=&quot;some-id&quot; className=&quot;some-class-name&quot;&gt;&lt;/div&gt;</code></pre>
 <p>dynamic</p>
@@ -610,7 +612,7 @@ var classes = &#39;some-class-name&#39;;
 &lt;div id={recordId}  className={classes}&gt;...&lt;/div&gt;</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-32">
+  <div class="slide hidden" id="slide-33">
     <section class="slide-content"><h3 id="conditionals">Conditionals</h3>
 <pre><code>&lt;div className={ 
   this.state.isComplete ? &#39;isComplete&#39; : &#39;&#39; 
@@ -619,6 +621,12 @@ var classes = &#39;some-class-name&#39;;
 <li>use ternary logic</li>
 <li>set a variable </li>
 <li>offload to a function</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h3 id="conditionals-cont-">Conditionals (cont)</h3>
+<ul>
 <li><p>use the &amp;&amp; </p>
   <div className={
     this.state.isComplete && 'isComplete'
@@ -626,7 +634,7 @@ var classes = &#39;some-class-name&#39;;
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-33">
+  <div class="slide hidden" id="slide-35">
     <section class="slide-content"><h3 id="non-dom-attributes">Non-DOM Attributes</h3>
 <ul>
 <li>key</li>
@@ -635,7 +643,7 @@ var classes = &#39;some-class-name&#39;;
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-36">
     <section class="slide-content"><h3 id="ref">ref</h3>
 <pre><code>&lt;div&gt;
   &lt;input ref=&quot;myInput&quot; ... /&gt;
@@ -645,7 +653,7 @@ var classes = &#39;some-class-name&#39;;
 this.ref.myInput // Inside your component</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-35">
+  <div class="slide hidden" id="slide-37">
     <section class="slide-content"><h3 id="events">Events</h3>
 <pre><code>...
 handleClick: function(event) { ... },
@@ -654,7 +662,7 @@ render: function() {
 }</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><h3 id="comments">Comments</h3>
 <pre><code>&lt;div&gt;
   {/* 
@@ -673,14 +681,14 @@ render: function() {
   /&gt;</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-39">
     <section class="slide-content"><h3 id="special-attributes">Special attributes</h3>
 <pre><code>&lt;label htmlFor=&quot;for-text&quot; ...&gt;
 
 &lt;div className={classes} ...&gt;</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-38">
+  <div class="slide hidden" id="slide-40">
     <section class="slide-content"><h3 id="styles">Styles</h3>
 <pre><code>var styles = {
   borderColor: &#39;#999&#39;,
@@ -689,7 +697,7 @@ render: function() {
 React.render(&lt;div style={styles}&gt;...&lt;/div&gt;, node);</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-39">
+  <div class="slide hidden" id="slide-41">
     <section class="slide-content"><h3 id="without-jsx">Without JSX</h3>
 <pre><code>var DividerClass = React.createClass({ displayName: &#39;Divider&#39;,
   render: function() {
@@ -703,11 +711,11 @@ React.render(&lt;div style={styles}&gt;...&lt;/div&gt;, node);</code></pre>
 })</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-40">
+  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h1 id="component-lifecycle">Component Lifecycle</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-41">
+  <div class="slide hidden" id="slide-43">
     <section class="slide-content"><h3 id="instanciation">Instanciation</h3>
 <ul>
 <li>getDefaultProps</li>
@@ -718,7 +726,7 @@ React.render(&lt;div style={styles}&gt;...&lt;/div&gt;, node);</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-42">
+  <div class="slide hidden" id="slide-44">
     <section class="slide-content"><h3 id="all-subsquent-uses">All subsquent uses</h3>
 <ul>
 <li>getInitialState</li>
@@ -728,7 +736,7 @@ React.render(&lt;div style={styles}&gt;...&lt;/div&gt;, node);</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-43">
+  <div class="slide hidden" id="slide-45">
     <section class="slide-content"><h3 id="lifetime">Lifetime</h3>
 <ul>
 <li>componentWillRecieveProps</li>
@@ -739,36 +747,36 @@ React.render(&lt;div style={styles}&gt;...&lt;/div&gt;, node);</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-44">
+  <div class="slide hidden" id="slide-46">
     <section class="slide-content"><h3 id="teardown">Teardown</h3>
 <ul>
 <li>componentWillUnmount</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-45">
+  <div class="slide hidden" id="slide-47">
     <section class="slide-content"><h3 id="getdefaultprops">getDefaultProps</h3>
 <p>called only once, sets default values when not specified by parent</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-46">
+  <div class="slide hidden" id="slide-48">
     <section class="slide-content"><h3 id="getinitialstate">getInitialState</h3>
 <p>called only once, chance to customize internal state</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-47">
+  <div class="slide hidden" id="slide-49">
     <section class="slide-content"><h3 id="componentwillmount">componentWillMount</h3>
 <p>before the initial render, last chance to change the state 
 before a render method is called.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-48">
+  <div class="slide hidden" id="slide-50">
     <section class="slide-content"><h3 id="render">render</h3>
 <p>Builds the virtual DOM - should be a <code>PURE</code> function</p>
 <p>can return null, false or React component</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-49">
+  <div class="slide hidden" id="slide-51">
     <section class="slide-content"><h3 id="componentdidmount">componentDidMount</h3>
 <p>Can access actual node via <code>this.getDOMNode()</code></p>
 <p>This is the lifecycle hook for accessing non-react components</p>
@@ -785,7 +793,7 @@ var MyComponent = React.createClass({
 });</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-50">
+  <div class="slide hidden" id="slide-52">
     <section class="slide-content"><h3 id="componentwillreceiveprops">componentWillReceiveProps</h3>
 <p>Props can change at any moment, this method gives
 the component the opportunity to update the state
@@ -799,47 +807,47 @@ from the changed props.</p>
 }</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-51">
+  <div class="slide hidden" id="slide-53">
     <section class="slide-content"><h3 id="shouldcomponentupdate">shouldComponentUpdate</h3>
 <p>If you don&#39;t need to re-render the component return false.</p>
 <p>** Be careful not to pre-optimize</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-52">
+  <div class="slide hidden" id="slide-54">
     <section class="slide-content"><h3 id="componentwillupdate">componentWillUpdate</h3>
 <p>Called when props change, but can&#39;t update date in this method.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-53">
+  <div class="slide hidden" id="slide-55">
     <section class="slide-content"><h3 id="componentdidupdate">componentDidUpdate</h3>
 <p>similar to componentDidMount</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-54">
+  <div class="slide hidden" id="slide-56">
     <section class="slide-content"><h3 id="componentwillunmount">componentWillUnmount</h3>
 <p>this is where you can do any cleanup</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-55">
+  <div class="slide hidden" id="slide-57">
     <section class="slide-content"><h3 id="anti-pattern">Anti-Pattern</h3>
 <p>calculated values as state</p>
 <p>calcualate values at render time.</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-56">
+  <div class="slide hidden" id="slide-58">
     <section class="slide-content"><h1 id="data-flow">Data Flow</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-57">
+  <div class="slide hidden" id="slide-59">
     <section class="slide-content"><h1 id="parent-child">Parent -&gt; Child</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-58">
+  <div class="slide hidden" id="slide-60">
     <section class="slide-content"><h2 id="props">Props</h2>
 <p>Short for Properties</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-59">
+  <div class="slide hidden" id="slide-61">
     <section class="slide-content"><h2 id="proptypes">PropTypes</h2>
 <p>var TableRow = React.createClass({
   propTypes: {
@@ -851,12 +859,12 @@ from the changed props.</p>
 });</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-60">
+  <div class="slide hidden" id="slide-62">
     <section class="slide-content"><h2 id="getdefaultprops">getDefaultProps</h2>
 <p>called as soon as React.createClass is called</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-61">
+  <div class="slide hidden" id="slide-63">
     <section class="slide-content"><h2 id="state">State</h2>
 <p>Internal state of your component</p>
 <ul>
@@ -864,14 +872,14 @@ from the changed props.</p>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-62">
+  <div class="slide hidden" id="slide-64">
     <section class="slide-content"><ul>
 <li>Try to use state for simple data</li>
 <li>Always consider props as the truth</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-63">
+  <div class="slide hidden" id="slide-65">
     <section class="slide-content"><h1 id="event-handling">Event Handling</h1>
 <pre><code>&lt;button className=&quot;btn btn-save&quot; 
   onClick={this.handleSaveClicked}&gt;
@@ -879,30 +887,173 @@ from the changed props.</p>
 &lt;/button&gt;</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-64">
+  <div class="slide hidden" id="slide-66">
     <section class="slide-content"><h1 id="composition">Composition</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-65">
+  <div class="slide hidden" id="slide-67">
     <section class="slide-content"><h1 id="mixins">Mixins</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-66">
-    <section class="slide-content"><h1 id="dom-manipulation">DOM Manipulation</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-67">
-    <section class="slide-content"><h1 id="forms">Forms</h1>
-</section>
-  </div>
   <div class="slide hidden" id="slide-68">
-    <section class="slide-content"><h1 id="animations">Animations</h1>
+    <section class="slide-content"><h3 id="what-are-mixins-">What are Mixins?</h3>
+<p>Objects mixed in to our Components:</p>
+<pre><code>React.createClass({
+  mixins: [{
+    getInitialState: function() { return {a: 1}}
+  }],
+  getInitialState: function() { return { b: 2}}
+});</code></pre>
+<p>Result: {a: 1, b: 2}</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-69">
-    <section class="slide-content"></section>
+    <section class="slide-content"><h1 id="dom-manipulation">DOM Manipulation</h1>
+</section>
   </div>
   <div class="slide hidden" id="slide-70">
+    <section class="slide-content"><h1 id="forms">Forms</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-71">
+    <section class="slide-content"><h3 id="controlled-forms">Controlled Forms</h3>
+<iframe width="100%" height="300" src="//jsfiddle.net/1a8xr2z6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-72">
+    <section class="slide-content"><h3 id="events">Events</h3>
+<pre><code>handleEvent: function(event) {
+  var DOMNode = event.target;
+  var newValue = DOMNode.value;
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-73">
+    <section class="slide-content"><h3 id="textarea">TextArea</h3>
+<pre><code>&lt;textarea
+  value={this.state.mytext}
+  onChange={this.handleEvent} /&gt;</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-74">
+    <section class="slide-content"><h3 id="select">Select</h3>
+<pre><code>&lt;select value=&quot;{this.state.selectValue&quot; onChange={this.handleChange}&gt;
+  &lt;option value=&quot;A&quot;&gt;A&lt;/option&gt;
+  &lt;option value=&quot;B&quot;&gt;B&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-75">
+    <section class="slide-content"><h3 id="select-multi">Select Multi</h3>
+<iframe width="100%" height="300" src="//jsfiddle.net/yddy2ep0/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-76">
+    <section class="slide-content"><h3 id="checkbox-and-radio">CheckBox and Radio</h3>
+<iframe width="100%" height="300" src="//jsfiddle.net/es83ydmn/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-77">
+    <section class="slide-content"><h3 id="multiple-form-handlers">Multiple Form Handlers</h3>
+<iframe width="100%" height="300" src="//jsfiddle.net/wyzvLhkb/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-78">
+    <section class="slide-content"><h1 id="animations">Animations</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-79">
+    <section class="slide-content"><h3 id="reactcsstransitiongroup">ReactCSSTransitionGroup</h3>
+<pre><code>var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
+var TodoList = React.createClass({
+  getInitialState: function() {
+    return {items: [&#39;hello&#39;, &#39;world&#39;, &#39;click&#39;, &#39;me&#39;]};
+  },
+  handleAdd: function() {
+    var newItems =
+      this.state.items.concat([prompt(&#39;Enter some text&#39;)]);
+    this.setState({items: newItems});
+  },
+  handleRemove: function(i) {
+    var newItems = this.state.items;
+    newItems.splice(i, 1);
+    this.setState({items: newItems});
+  },
+  render: function() {
+    var items = this.state.items.map(function(item, i) {
+      return (
+        &lt;div key={item} onClick={this.handleRemove.bind(this, i)}&gt;
+          {item}
+        &lt;/div&gt;
+      );
+    }.bind(this));
+    return (
+      &lt;div&gt;
+        &lt;button onClick={this.handleAdd}&gt;Add Item&lt;/button&gt;
+        &lt;ReactCSSTransitionGroup transitionName=&quot;example&quot;&gt;
+          {items}
+        &lt;/ReactCSSTransitionGroup&gt;
+      &lt;/div&gt;
+    );
+  }
+});</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-80">
+    <section class="slide-content"><h3 id="reactcsstransitiongroup-links">ReactCSSTransitionGroup Links</h3>
+<p><a href="https://github.com/twilson63/bleeding-edge-sample-app.git">https://github.com/twilson63/bleeding-edge-sample-app.git</a></p>
+<p><a href="http://facebook.github.io/react/docs/animation.html">http://facebook.github.io/react/docs/animation.html</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-81">
+    <section class="slide-content"><h1 id="react-router">React Router</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-82">
+    <section class="slide-content"><h3 id="router-example">Router Example</h3>
+<pre><code>var routes = (
+  &lt;Route handler={App} path=&quot;/&quot;&gt;
+    &lt;DefaultRoute handler={Home} /&gt;
+    &lt;Route name=&quot;about&quot; handler={About} /&gt;
+    &lt;Route name=&quot;users&quot; handler={Users}&gt;
+      &lt;Route name=&quot;recent-users&quot; path=&quot;recent&quot; handler={RecentUsers} /&gt;
+      &lt;Route name=&quot;user&quot; path=&quot;/user/:userId&quot; handler={User} /&gt;
+      &lt;NotFoundRoute handler={UserRouteNotFound}/&gt;
+    &lt;/Route&gt;
+    &lt;NotFoundRoute handler={NotFound}/&gt;
+    &lt;Redirect from=&quot;company&quot; to=&quot;about&quot; /&gt;
+  &lt;/Route&gt;
+);
+
+Router.run(routes, function (Handler) {
+  React.render(&lt;Handler/&gt;, document.body);
+});
+
+// Or, if you&#39;d like to use the HTML5 history API for cleaner URLs:
+
+Router.run(routes, Router.HistoryLocation, function (Handler) {
+  React.render(&lt;Handler/&gt;, document.body);
+});</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-83">
+    <section class="slide-content"><h3 id="router-overview-guide">Router Overview Guide</h3>
+<p><a href="https://github.com/rackt/react-router/blob/master/docs/guides/overview.md">https://github.com/rackt/react-router/blob/master/docs/guides/overview.md</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-84">
+    <section class="slide-content"><h3 id="cool-tricks-hype-">Cool Tricks (Hype!)</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z5e7kWSHWTg" frameborder="0" allowfullscreen></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-85">
+    <section class="slide-content"><h3 id="reactconf-videos">ReactConf Videos</h3>
+<p><a href="http://conf.reactjs.com/schedule.html">http://conf.reactjs.com/schedule.html</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-86">
+    <section class="slide-content"><h3 id="lets-build-an-app">Lets Build an App</h3>
+<pre><code>npm i reactjs-adventure
+git clone https://github.com/twilson63/reactjs-example.git</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-87">
     <section class="slide-content"><div class="author">
   <h1 class="name">Tom Wilson</h1>
     <h3 class="twitter">
